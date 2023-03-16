@@ -1,0 +1,38 @@
+# Where are all the schema files located? globs are supported.
+schema:
+  - "schema.graphql"
+
+# Where should the generated server code go?
+exec:
+  filename: "generated.go"
+  package:  graph
+
+# Where should the generated models go?
+model:
+  filename: "model.go"
+  package:  graph
+
+# What are the names of any custom templates that should be executed to generate your non-model code?
+# templates:
+#   - "path/to/templates"
+
+# Where should any generated dataloaders go?
+# dataloader:
+#   filename: "path/to/dataloaders.go"
+#   package:  dataloader
+
+# Where should the resolver implementations go?
+resolver:
+  layout: follow-schema
+  dir: "internal/graph"
+
+# Optional: turn on use `gqlgen:"fieldName"` tags in your models
+# struct_tag: json
+
+# Optional: turn on to use []Thing instead of []*Thing
+# omit_slice_element_pointers: false
+
+# Optional: set to speed up generation time by not performing a final validation pass.
+# skip_validation: false
+# autobind:
+#   - "github.com/denyshubh/user-auth-app"
